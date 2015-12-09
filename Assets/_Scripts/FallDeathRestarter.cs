@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class FallDeathRestarter : MonoBehaviour
@@ -17,10 +18,10 @@ public class FallDeathRestarter : MonoBehaviour
     {
 
         if (playerRef.transform.position.y < fallDeathDistance)
-            Application.LoadLevel(Application.loadedLevel);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
         if (Input.GetKeyDown(KeyCode.R))
-            Application.LoadLevel(Application.loadedLevel);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 }

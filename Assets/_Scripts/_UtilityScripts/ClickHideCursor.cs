@@ -10,6 +10,8 @@ public class ClickHideCursor : MonoBehaviour
     void Start()
     {
         //setCursorLock(true);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     //Locking system
@@ -22,10 +24,8 @@ public class ClickHideCursor : MonoBehaviour
         if (isLocked == true)
         {
             Cursor.lockState = CursorLockMode.Locked;
-            Time.timeScale = 1;
-
+            //Time.timeScale = 1;
         }
-        //If game IS paused
         else if (isLocked == false)
         {
             Cursor.lockState = CursorLockMode.None;
@@ -36,6 +36,7 @@ public class ClickHideCursor : MonoBehaviour
 
     void Update()
     {
+        /*
         if (!isLocked && (Input.GetMouseButtonDown(0)))
         {
             setCursorLock(!isLocked);
@@ -49,5 +50,6 @@ public class ClickHideCursor : MonoBehaviour
             //If true, then cursor is locked, if false cursor is unlocked (may be the other way but I don't want to test it )
             setCursorLock(!isLocked);
         }
+        */
     }
 }

@@ -78,6 +78,7 @@ public class P_Motor : MonoBehaviour
         {
             MoveVector = new Vector3(MoveVector.x, -1, MoveVector.z);
             numberOfJumps = baseNumberOfJumps; // My addition for double jumping and resetting jumps.
+            //JumpTextTracker.S.flashJumpTextMethod();
         }
     }
 

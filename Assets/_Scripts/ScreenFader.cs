@@ -4,11 +4,13 @@ using System.Collections;
 
 public class ScreenFader : MonoBehaviour
 {
-    Image thisImage;
+    public static ScreenFader S;
+    public Image thisImage;
     public Color initialColor;
 
     void Awake()
     {
+        S = this;
         thisImage = GetComponent<Image>();
         thisImage.color = initialColor;
     }

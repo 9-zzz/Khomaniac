@@ -31,7 +31,7 @@ GameObject:
   - 198: {fileID: 19876786}
   - 199: {fileID: 19997544}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: kTargetPS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 132770}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.30000019, z: 13.8000002}
+  m_LocalPosition: {x: 0, y: 16.6000004, z: 31.5}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 404188}
@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e556e7fbf06cad48a3c076a232481ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  respawnTime: 5
 --- !u!198 &19876786
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -180,7 +181,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: 100
+      scalar: 150
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -307,7 +308,7 @@ ParticleSystem:
         rgba: 4294967295
       minMaxState: 0
     startSize:
-      scalar: 1
+      scalar: .349999994
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -393,7 +394,7 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 100
+      scalar: 200
       maxCurve:
         serializedVersion: 2
         m_Curve:

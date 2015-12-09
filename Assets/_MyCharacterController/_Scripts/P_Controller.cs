@@ -61,6 +61,7 @@ public class P_Controller : MonoBehaviour
     void Jump()
     {
         P_Motor.S.Jump();
+        JumpTextTracker.S.flashJumpTextMethod();
     }
 
 }

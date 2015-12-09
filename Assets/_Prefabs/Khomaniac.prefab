@@ -61,6 +61,7 @@ GameObject:
   - 23: {fileID: 2305088}
   - 95: {fileID: 9503832}
   - 114: {fileID: 11441798}
+  - 82: {fileID: 8226948}
   m_Layer: 0
   m_Name: kGun
   m_TagString: Untagged
@@ -327,6 +328,76 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 199596}
   m_Enabled: 1
+--- !u!82 &8226948
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 161732}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!92 &9254130
 Behaviour:
   m_ObjectHideFlags: 1
@@ -343,7 +414,7 @@ Animator:
   m_GameObject: {fileID: 161732}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 2b53742ae62f3c646bd79bbfe63469d4, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 92e16724d96271842a3a94385b945cd8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -394,6 +465,8 @@ MonoBehaviour:
   gunHeatUpColor: {r: 1, g: .358214974, b: .16911763, a: 0}
   kps: {fileID: 19887404}
   gunRayHit: {x: 0, y: 0, z: 0}
+  kGunshotSound: {fileID: 8300000, guid: a2874e3082ae3cc4fa9d4e00dca3b443, type: 3}
+  kGunshotLoudness: .5
 --- !u!114 &11447548
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -411,8 +484,8 @@ MonoBehaviour:
   gravity: 20
   terminalVelocity: 20
   forwardSpeed: 10
-  backwardSpeed: 2
-  strafingSpeed: 5
+  backwardSpeed: 7
+  strafingSpeed: 15
   slideSpeed: 10
   slideFallSmoothing: 7
   slideThreshold: .800000012
@@ -490,7 +563,7 @@ MonoBehaviour:
   MinimumX: -90
   MaximumX: 90
   smooth: 1
-  smoothTime: 3
+  smoothTime: 12
   shake: 0
   shakeAmount: .300000012
   decreaseFactor: 1
@@ -556,7 +629,7 @@ ParticleSystem:
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-      minMaxState: 3
+      minMaxState: 0
     startSpeed:
       scalar: 4.8559351
       maxCurve:
@@ -685,7 +758,7 @@ ParticleSystem:
         rgba: 4294967295
       minMaxState: 0
     startSize:
-      scalar: .150000006
+      scalar: .180000007
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1728,7 +1801,7 @@ ParticleSystem:
         rgba: 4294967295
       minMaxState: 0
     startSize:
-      scalar: .25
+      scalar: .100000001
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1814,7 +1887,7 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 300
+      scalar: 600
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1893,12 +1966,12 @@ ParticleSystem:
   RotationModule:
     enabled: 1
     curve:
-      scalar: 17.4532928
+      scalar: 8.72664642
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 1
+          value: .400000006
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -1908,7 +1981,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: .5
+          value: 1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -1964,7 +2037,7 @@ ParticleSystem:
       minGradient:
         key0:
           serializedVersion: 2
-          rgba: 4294967295
+          rgba: 1879048191
         key1:
           serializedVersion: 2
           rgba: 255

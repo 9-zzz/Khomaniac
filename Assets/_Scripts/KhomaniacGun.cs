@@ -13,17 +13,21 @@ public class KhomaniacGun : MonoBehaviour
     public Color gunHeatUpColor;
 
     public ParticleSystem kps;
-
-    Renderer rend;
-
-    RaycastHit hit;
     public Vector3 gunRayHit;
+
+    public AudioClip kGunshotSound;
+    public float kGunshotLoudness = 0.5f;
+
+    AudioSource audioSource;
+    Renderer rend;
+    RaycastHit hit;
 
     void Awake()
     {
         S = this;
         rend = GetComponent<Renderer>();
         kSpawnPoint = transform.GetChild(0);
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Start()
@@ -71,7 +75,7 @@ public class KhomaniacGun : MonoBehaviour
         }
         else
         {
-            gunRayHit = Camera.main.transform.forward * 400.0f;
+            gunRayHit = Camera.main.transform.forward * 10000.0f;
         }
     }
 
@@ -82,9 +86,10 @@ public class KhomaniacGun : MonoBehaviour
             if (fireNow)
             {
                 Instantiate(kBullet, kSpawnPoint.position, kSpawnPoint.rotation);
+                audioSource.PlayOneShot(kGunshotSound, kGunshotLoudness);
                 yield return new WaitForSeconds(waitTime);
             }
-            yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSeconds(0.0f);
         }
     }
 

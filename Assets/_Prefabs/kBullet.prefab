@@ -124,7 +124,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc45403b545274b4d84539fa4c1d396f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kBulletForce: 80
+  kBulletForce: 90
+  kBulletLifetime: 6
+  hitSomething: 0
 --- !u!135 &13532436
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -146,7 +148,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: kBulletForce
-      value: 80
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_CollisionDetection

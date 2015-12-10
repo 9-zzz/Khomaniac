@@ -18,7 +18,18 @@ public class SpecialJumpGivingTarget : MonoBehaviour {
         if (other.tag == "kBullet")
         {
             P_Motor.S.numberOfJumps++;
-            JumpTextTracker.S.flashJumpTextMethod();
+
+            Debug.Log(VisualAmmoBar.S.ammoIndex + "  " + VisualAmmoBar.S.ammoCubesLength);
+
+            VisualAmmoBar.S.ammoIndex++;
+
+            if (VisualAmmoBar.S.ammoIndex > (VisualAmmoBar.S.ammoCubesLength - 1))
+            {
+                VisualAmmoBar.S.maxAmmoIndex++;
+                VisualAmmoBar.S.ammoIndex = 0;
+            }
+
+            VisualAmmoBar.S.ammoCubes[VisualAmmoBar.S.ammoIndex].GetComponent<MeshRenderer>().enabled = true;
 
             JumpTargetRespawn.S.srespawn(this.gameObject.transform.position, specialRespawnTime);
 

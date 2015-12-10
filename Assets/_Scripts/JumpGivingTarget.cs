@@ -20,7 +20,12 @@ public class JumpGivingTarget : MonoBehaviour
         if (other.tag == "kBullet")
         {
             P_Motor.S.numberOfJumps++;
-            JumpTextTracker.S.flashJumpTextMethod();
+
+            if (VisualAmmoBar.S.ammoIndex < VisualAmmoBar.S.ammoCubesLength)
+            {
+                VisualAmmoBar.S.ammoIndex++;
+                VisualAmmoBar.S.ammoCubes[VisualAmmoBar.S.ammoIndex].GetComponent<MeshRenderer>().enabled = true;
+            }
 
             JumpTargetRespawn.S.respawn(this.gameObject.transform.position, respawnTime);
 

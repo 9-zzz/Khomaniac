@@ -4,6 +4,7 @@ using System.Collections;
 
 public class LoadNextLevelTrigger : MonoBehaviour
 {
+    public int indexToLoad;
 
     // Use this for initialization
     void Start()
@@ -28,6 +29,6 @@ public class LoadNextLevelTrigger : MonoBehaviour
     {
         ScreenFader.S.thisImage.CrossFadeAlpha(1.0f, 2.0f, true);
         yield return new WaitForSeconds(2.0f);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(indexToLoad);
     }
 }

@@ -78,9 +78,30 @@ public class P_Motor : MonoBehaviour
         {
             MoveVector = new Vector3(MoveVector.x, -1, MoveVector.z);
             numberOfJumps = baseNumberOfJumps; // My addition for double jumping and resetting jumps.
-            //JumpTextTracker.S.flashJumpTextMethod();
+
+            for (int i = 0; i < VisualAmmoBar.S.ammoCubes.Length; i++)
+                VisualAmmoBar.S.ammoCubes[i].GetComponent<MeshRenderer>().enabled = false;
+
+            VisualAmmoBar.S.ammoCubes[0].GetComponent<MeshRenderer>().enabled = true;
+            VisualAmmoBar.S.ammoCubes[1].GetComponent<MeshRenderer>().enabled = true;
+            VisualAmmoBar.S.ammoIndex = 1;
         }
     }
+
+    public void Jump()
+    {
+        if (numberOfJumps > 0)
+        {
+            verticalVelocity = jumpSpeed;
+            jumpPS.Play();
+            numberOfJumps--;
+            VisualAmmoBar.S.ammoCubes[VisualAmmoBar.S.ammoIndex].GetComponent<MeshRenderer>().enabled = false;
+            VisualAmmoBar.S.ammoIndex--;
+            //TP_Camera.S.shake = 0.07f;
+            //FP_Camera.S.shake = 0.07f;
+        }
+    }
+
 
     void ApplySlide()
     {
@@ -108,18 +129,6 @@ public class P_Motor : MonoBehaviour
         {
             //MoveVector = slideDirection;
             MoveVector = Vector3.Lerp(MoveVector, slideDirection, Time.deltaTime * slideFallSmoothing);
-        }
-    }
-
-    public void Jump()
-    {
-         if (numberOfJumps > 0)
-        {
-            verticalVelocity = jumpSpeed;
-            jumpPS.Play();
-            numberOfJumps--;
-            //TP_Camera.S.shake = 0.07f;
-            //FP_Camera.S.shake = 0.07f;
         }
     }
 

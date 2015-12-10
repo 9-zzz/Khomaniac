@@ -38,7 +38,7 @@ public class KhomaniacBullet : MonoBehaviour
     void Update()
     {
         if (hitSomething)
-            kBulletLight.intensity = Mathf.MoveTowards(kBulletLight.intensity, 0.0f, Time.deltaTime * 3.0f);
+            kBulletLight.intensity = Mathf.MoveTowards(kBulletLight.intensity, 0.0f, Time.deltaTime * 20.0f);
 
         if (kBulletLight.intensity == 0.0f)
             Destroy(gameObject);

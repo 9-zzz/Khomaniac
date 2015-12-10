@@ -2,19 +2,48 @@ using UnityEngine;
 using System.Collections;
 
 public class UnityCursorHandler: MonoBehaviour {
-	CursorLockMode wantedMode;
-	
-	// Apply requested cursor state
-	void SetCursorState ()
-	{
-		Cursor.lockState = wantedMode;
+
+    public static bool locked = true;
+    
+    void Start()
+    {
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
+    }
+
+    void Update()
+    {
+        if(locked)
+        {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        }
+
+        if(!locked)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+            locked = false;
+
+        if (Input.GetMouseButtonDown(0))
+            locked = true;
+    }
+
+    /*
+    // Apply requested cursor state
+    void SetCursorState()
+    {
+        Cursor.lockState = wantedMode;
 		// Hide cursor when locking
 		Cursor.visible = (CursorLockMode.Locked != wantedMode);
 	}
 	
 	void OnGUI ()
 	{
-		GUILayout.BeginVertical ();
+        GUILayout.BeginHorizontal();
 		// Release cursor on escape keypress
 		if (Input.GetKeyDown (KeyCode.Escape))
 			Cursor.lockState = wantedMode = CursorLockMode.None;
@@ -44,8 +73,9 @@ public class UnityCursorHandler: MonoBehaviour {
 				break;
 		}
 
-		GUILayout.EndVertical ();
+        GUILayout.EndVertical();
 
 		SetCursorState ();
 	}
+    */
 }

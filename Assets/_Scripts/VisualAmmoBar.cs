@@ -14,12 +14,12 @@ public class VisualAmmoBar : MonoBehaviour
 
     public int ammoCubesLength;
 
-    P_Motor pMotor;
+    //P_Motor pMotor;
 
     void Awake()
     {
         S = this;
-        pMotor = P_Motor.S;
+        //pMotor = P_Motor.S;
     }
 
     // Use this for initialization

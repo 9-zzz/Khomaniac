@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: cd732fb44d34b94499d898ade1175074
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - shader: {fileID: 4800000, guid: ce9a06ac4ede6f84ab1865b7d32f204c, type: 3}
+  - VHS: {fileID: 15200000, guid: 324a486eb541aa848884bad1ebd7b5e6, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -15,6 +15,6 @@ TODO: Add useage/installation or a good standard README for Unity projects.
 * [ ] With the gun incorporate a better visual jump bar system (hexagonal barrel of new gun)
 * [ ] Possible rotating halves of a ring for a in game 3D mesh reticle?!
 * [ ] Octahedron bullets and light source only on the muzzle flare not on bullets
-* [ ] (Make new hand monsters + Warren Oates)
-* [ ] Make more goals...
+* [ ] ~Make new hand monsters + Warren Oates~
+* [x] Make more goals...
 

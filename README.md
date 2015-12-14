@@ -1,6 +1,9 @@
 # Khomaniac
 
-A revamping of my Jump and Shoot Unity game
+## [Development Diary](http://sia.github.io/khomaniac/dev)
+
+This video game is heavily inspired by an album called [By Inheritance](https://en.wikipedia.org/wiki/By_Inheritance)
+This is a revamping of my Jump and Shoot/Galloping Gun Unity game
 Here are old gameplay videos from the previous projects: 
 * [January 2015](https://youtu.be/hmyeGGlsQhs)
 * [May 2015](https://youtu.be/VRhT5tukZp4)

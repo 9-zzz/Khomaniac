@@ -56,11 +56,19 @@ public class P_Controller : MonoBehaviour
         //if (Input.GetKeyDown(KeyCode.Space))
         if (Input.GetButtonDown("Jump"))
             Jump();
+
+        if (Input.GetKeyDown(KeyCode.E))
+            Dash();
     }
 
     void Jump()
     {
         P_Motor.S.Jump();
+    }
+
+    void Dash()
+    {
+        P_Motor.S.Dash();
     }
 
 }

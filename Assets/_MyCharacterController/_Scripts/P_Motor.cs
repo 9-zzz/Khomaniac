@@ -25,13 +25,15 @@ public class P_Motor : MonoBehaviour
     public Vector3 MoveVector { get; set; }
     public float verticalVelocity { get; set; }
 
-    ParticleSystem jumpPS;
-
     public float moveSpeed;
+
+    ParticleSystem jumpPS;
+    Rigidbody rb;
 
     void Awake()
     {
         S = this;
+        rb = this.GetComponent<Rigidbody>();
         jumpPS = this.transform.GetChild(0).GetComponent<ParticleSystem>();
     }
 
@@ -79,12 +81,14 @@ public class P_Motor : MonoBehaviour
             MoveVector = new Vector3(MoveVector.x, -1, MoveVector.z);
             numberOfJumps = baseNumberOfJumps; // My addition for double jumping and resetting jumps.
 
+            /*
             for (int i = 0; i < VisualAmmoBar.S.ammoCubes.Length; i++)
                 VisualAmmoBar.S.ammoCubes[i].GetComponent<MeshRenderer>().enabled = false;
 
             VisualAmmoBar.S.ammoCubes[0].GetComponent<MeshRenderer>().enabled = true;
             VisualAmmoBar.S.ammoCubes[1].GetComponent<MeshRenderer>().enabled = true;
             VisualAmmoBar.S.ammoIndex = 1;
+            */
         }
     }
 
@@ -95,11 +99,15 @@ public class P_Motor : MonoBehaviour
             verticalVelocity = jumpSpeed;
             jumpPS.Play();
             numberOfJumps--;
-            VisualAmmoBar.S.ammoCubes[VisualAmmoBar.S.ammoIndex].GetComponent<MeshRenderer>().enabled = false;
-            VisualAmmoBar.S.ammoIndex--;
-            //TP_Camera.S.shake = 0.07f;
-            //FP_Camera.S.shake = 0.07f;
+            //VisualAmmoBar.S.ammoCubes[VisualAmmoBar.S.ammoIndex].GetComponent<MeshRenderer>().enabled = false;
+            //VisualAmmoBar.S.ammoIndex--;
         }
+    }
+
+    public void Dash()
+    {
+        //MoveVector = new Vector3(MoveVector.x, MoveVector.y, 20000.0f);
+        rb.AddRelativeForce(0, 0, 3000.0f, ForceMode.Impulse);
     }
 
 

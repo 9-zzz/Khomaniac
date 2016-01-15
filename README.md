@@ -1,6 +1,6 @@
 # Khomaniac
 
-## [Development Diary](http://sia.github.io/khomaniac/dev)
+## [Development Diary](http://9.github.io/khomaniac/dev)
 
 This video game is heavily inspired by an album called [By Inheritance](https://en.wikipedia.org/wiki/By_Inheritance)
 This is a revamping of my Jump and Shoot/Galloping Gun Unity game
